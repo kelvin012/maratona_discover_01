@@ -95,11 +95,9 @@ const DOM = {
 
 const Utils = {
     formatAmount(value) {
-        // /\,\./g => É uma expressão regular onde sera buscado todos as "," e "." e sera substituido pelo metodo replace por ""
-        // Funciona sem a expressão regular tambem ?
-        value = Number(value.replace(/\,\./g, '')) * 100
+        value *= 100
 
-        return value
+        return Math.round(value)
     },
     formatDate(date) {
         const splittedDate = date.split('-')
